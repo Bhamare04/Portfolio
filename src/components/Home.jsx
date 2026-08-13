@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import BackgroundBlobs from './BackgroundBlobs';
 import TypewriterText from './TypewriterText';
-import cvImage from '../assets/kartik_bhamare_Resume.pdf';
+import cvImage from '../assets/kartik_bhamare_resume.pdf';
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
