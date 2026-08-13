@@ -1,0 +1,213 @@
+.home-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 5%;
+  position: relative;
+  /* background: linear-gradient(to right, #e0f7fa, #cfd8dc);  Removed to let App.css handle it */
+  overflow: hidden;
+}
+
+.content {
+  max-width: 600px;
+  z-index: 1;
+  /* Keep content above wave */
+}
+
+.heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  /* Make heading white because of dark gradient */
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hi {
+  /* Replace text color with text-gradient */
+  background: linear-gradient(to right, #ffb347, #ffcc33);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.2rem;
+  animation: bounce 1s infinite;
+  display: inline-block;
+  text-shadow: none;
+  /* remove shadow for gradient text */
+}
+
+.subtext {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.get-started-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.8rem;
+  background-color: #ffffff;
+  color: #0a0f2c;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.get-started-btn:hover {
+  background-color: #0077ff;
+  color: white;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 119, 255, 0.4);
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-image {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid #0a0f2c;
+  object-fit: cover;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Decorative Wave */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  .image-container {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .profile-image {
+    max-width: 200px;
+  }
+}
+
+.cv-image-wrapper {
+  margin-top: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.cv-image {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+.modal-cv-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

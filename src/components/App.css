@@ -1,0 +1,17 @@
+/* Main App layout styles */
+.app-container {
+  background-color: #0a0f2c;
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+}
+
+section {
+  scroll-margin-top: 80px;
+  box-sizing: border-box;
+}
+
+#home, #about, #resume, #projects, #skills, #contact {
+  scroll-margin-top: 80px;
+}
+
